@@ -9,6 +9,7 @@ import re
 from typing import Any
 
 import aiohttp
+from yarl import URL
 
 from .const import API_BASE, API_PROXY, API_ENV, PORTAL_NAME, USER_AGENT
 
@@ -177,7 +178,7 @@ class OekostromApi:
         session = self._ensure_session()
         session.cookie_jar.update_cookies(
             {"oekp_l": self._session_guid},
-            aiohttp.URL(API_BASE),
+            URL(API_BASE),
         )
 
         _LOGGER.debug(
