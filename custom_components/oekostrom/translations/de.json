@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "oekostrom AG Anmeldung",
+        "description": "Geben Sie Ihre mein.oekostrom.at Zugangsdaten ein.",
+        "data": {
+          "username": "E-Mail",
+          "password": "Passwort"
+        }
+      },
+      "reauth_confirm": {
+        "title": "oekostrom AG erneut authentifizieren",
+        "description": "Ihre Sitzung ist abgelaufen. Bitte geben Sie Ihre Zugangsdaten erneut ein.",
+        "data": {
+          "username": "E-Mail",
+          "password": "Passwort"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Ungültige E-Mail oder Passwort.",
+      "cannot_connect": "Verbindung zum oekostrom Portal nicht möglich.",
+      "unknown": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "abort": {
+      "already_configured": "Dieses Konto ist bereits konfiguriert.",
+      "reauth_successful": "Erneute Authentifizierung war erfolgreich."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "product": {
+        "name": "Tarif"
+      },
+      "energy_price": {
+        "name": "Energiepreis (brutto)"
+      },
+      "base_price": {
+        "name": "Grundpreis (brutto)"
+      },
+      "energy_price_net": {
+        "name": "Energiepreis (netto)"
+      },
+      "base_price_net": {
+        "name": "Grundpreis (netto)"
+      },
+      "account_state": {
+        "name": "Kontostatus"
+      },
+      "next_installment": {
+        "name": "Nächste Teilzahlung"
+      },
+      "installment_amount": {
+        "name": "Teilzahlungsbetrag"
+      },
+      "metering_code": {
+        "name": "Zählpunktbezeichnung"
+      },
+      "supply_status": {
+        "name": "Lieferstatus"
+      }
+    }
+  }
+}

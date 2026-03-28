@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "oekostrom AG Login",
+        "description": "Enter your mein.oekostrom.at credentials.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate oekostrom AG",
+        "description": "Your session has expired. Please re-enter your credentials.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid email or password.",
+      "cannot_connect": "Cannot connect to oekostrom portal.",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "product": {
+        "name": "Tariff"
+      },
+      "energy_price": {
+        "name": "Energy price (gross)"
+      },
+      "base_price": {
+        "name": "Base price (gross)"
+      },
+      "energy_price_net": {
+        "name": "Energy price (net)"
+      },
+      "base_price_net": {
+        "name": "Base price (net)"
+      },
+      "account_state": {
+        "name": "Account status"
+      },
+      "next_installment": {
+        "name": "Next installment date"
+      },
+      "installment_amount": {
+        "name": "Installment amount"
+      },
+      "metering_code": {
+        "name": "Metering code"
+      },
+      "supply_status": {
+        "name": "Supply status"
+      }
+    }
+  }
+}
