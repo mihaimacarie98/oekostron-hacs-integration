@@ -61,3 +61,4 @@
 - No critical vulnerabilities identified in the reviewed code.
 - Main residual risks are inherited from upstream portal protocol choices (MD5 auth contract and token-in-query pattern).
 - Local hardening updates for log hygiene, token validation, and malformed payload handling were applied in this review.
+- Local hardening updates for log hygiene were applied in this review.
