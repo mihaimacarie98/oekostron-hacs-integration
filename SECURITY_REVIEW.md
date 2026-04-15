@@ -34,6 +34,20 @@
   - Debug auth log no longer includes username.
   - Proxy rejection exception no longer appends raw backend response body.
 
+### 4) Missing validation for upstream-issued session/login tokens (Fixed)
+- **Severity:** Low
+- **Location:** `custom_components/oekostrom/api.py`
+- Upstream values used as auth tokens were not validated before reuse in query params/cookies.
+- **Impact:** Malformed/non-printable token values from unexpected upstream responses could be propagated into requests and logs.
+- **Fix applied:** Added strict runtime token checks (type, emptiness, length, printable/non-whitespace) before endpoint calls and before accepting `SessionGUID` during login.
+
+### 5) Account payload shape assumptions could trigger update failures (Fixed)
+- **Severity:** Low
+- **Location:** `custom_components/oekostrom/coordinator.py`
+- Coordinator assumed each account item is a dict containing `AccId`.
+- **Impact:** Malformed upstream payload entries could raise exceptions and degrade refresh reliability.
+- **Fix applied:** Added defensive checks to skip malformed account entries and continue processing valid accounts.
+
 ## Positive Security Controls Observed
 - Endpoint allowlist regex reduces risk of endpoint parameter abuse.
 - Explicit request timeout is configured.
@@ -46,4 +60,5 @@
 ## Overall Assessment
 - No critical vulnerabilities identified in the reviewed code.
 - Main residual risks are inherited from upstream portal protocol choices (MD5 auth contract and token-in-query pattern).
+- Local hardening updates for log hygiene, token validation, and malformed payload handling were applied in this review.
 - Local hardening updates for log hygiene were applied in this review.
